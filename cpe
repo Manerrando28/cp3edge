@@ -1,0 +1,22 @@
+
+
+curl --location 'http://46.17.108.113:4041/iot/devices' \
+--header 'Content-Type: application/json' \
+--header 'fiware-service: smart' \
+--header 'fiware-servicepath: /' \
+--data '{
+  "devices": [
+    {
+      "device_id": "seu_numero_matricula",  // Substitua pelo seu número de matrícula
+      "entity_name": "urn:ngsi-ld:Flux:seu_numero_matricula", // Substitua pelo seu número de matrícula
+      "entity_type": "Flux",
+      "protocol": "PDI-IoTA-UltraLight",
+      "transport": "MQTT",
+      "attributes": [
+        { "object_id": "s", "name": "state", "type": "Text" },
+        { "object_id": "f", "name": "flux", "type": "Float" }
+      ]
+    }
+  ]
+}'
+
